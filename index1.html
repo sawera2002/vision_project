@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <title>About us</title>
+</head>
+<style>
+  * {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+button:hover{
+  background-color: white;
+  color: darkcyan;
+}
+body {
+min-height: 100vh;
+width: 100%;
+overflow-x: hidden;
+
+} 
+.col-sm-12.col-md-12.col-lg-12.col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header {
+  height: 2vh;
+  background: url(https://cdn.pixabay.com/photo/2015/10/29/14/38/web-1012467__340.jpg);
+  background-size: cover;
+}
+
+#sticky{
+  background-color: #fff;
+  width: 100%;
+  top:0;
+  transition: .4s;
+}
+#sticky.fixed {
+  position: fixed;
+  box-shadow: 5px 5px 19px 0px rgba(28, 28, 28, 0.737);
+  background-color:#146b71 ;
+  z-index: 1;
+}
+#sticky.fixed ul li img {
+  height: 100px;
+}
+#sticky.fixed ul li a {
+  font-size: 18px;
+  color: #000;
+}
+      nav{
+position: relative;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border-radius: 0px;
+  font-size: 0;
+  
+}
+nav a{
+font-size: 14px;
+color: white;
+text-transform: uppercase;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  padding: 10px;
+  
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+nav a:hover{
+color: darkblue;
+font-weight:900;
+
+}
+nav .animation{
+position: absolute;
+  height: 5px;
+  bottom: 0;
+  z-index: 0;
+  background: darkblue;
+  border-radius:8px ;
+  transition: all .9s ease 0s;
+}
+
+a:nth-child(1){
+  width: 100px;
+}
+a:nth-child(2){
+  width: 110px;
+}
+nav .start-home,a:nth-child(1):hover~ .animation{
+  width: 100px;
+  left: 0;
+}
+nav .start-about,a:nth-child(2):hover~ .animation{
+  width: 110px;
+  left: 100px;
+}
+
+a:nth-child(3){
+  width: 100px;
+}
+nav .start-Blog,a:nth-child(3):hover~ .animation{
+  width: 100px;
+  left: 210px;
+}
+
+a:nth-child(4){
+  width: 160px;
+}
+
+nav .start-Collections,a:nth-child(4):hover~ .animation{
+  width: 160px;
+  left: 310px;
+}
+a:nth-child(5){
+  width: 120px;
+}
+nav .start-Contact,a:nth-child(5):hover~ .animation{
+    width: 120px;
+    left: 470px;
+    }
+  .btn{
+color: white;
+background-color: darkcyan;
+}
+.btn:hover{
+color: darkcyan;
+border:1px solid darkcyan;
+background-color: white;
+}
+h2{
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: darkcyan;
+}
+.main{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#0c52a1;
+}
+.profile-card{
+  position: relative;
+  width: 220px;
+  background:#fff;
+  height: 220px;
+  border-radius: 50%;
+  box-shadow:0 0 22px #3336;
+  padding:30px;
+  transition: .6s;
+}
+.profile-card:hover{
+  border-radius: 10px;
+  height: 260px;
+}
+.profile-card .img{
+  position: relative;
+  width:100%;
+  height: 100%;
+  transition: .6s;
+  z-index: 99;
+}
+.img img{
+  border-radius: 50%;
+  width:100%;
+  box-shadow:0 0 22px #3336;
+  transition: .6s;
+  padding-left
+}
+.profile-card .img:hover{
+ transform:translateY(-60px);
+}
+.profile-card:hover img{
+  border-radius: 10px;
+}
+.caption{
+  text-align:center;
+  transform:translateY(-60px);
+  opacity: 0;
+  transition: .5s;
+
+}
+.profile-card:hover .caption{
+  opacity: 1;
+}
+.caption p{
+  font: size 17px;
+  color: blue;
+  margin:2px 0 6px 0;
+}
+.caption h4{
+  font-size: 21px;
+  color:darkblue;
+  margin-top:25px;
+}
+#team{
+  padding-left:50px;
+}
+li{
+  list-style: none;
+}
+li:hover{
+  cursor: pointer;
+  color: darkblue;
+  font-size: 18px;
+}
+button:hover{
+  text-decoration: underline;
+  color: darkblue;
+} 
+
+a:hover{
+        color: darkblue;
+      }
+      .fa-instagram:hover{
+        color: rgba(234, 0, 255, 0.849);
+      }
+      .fa-twitter:hover{
+        color: rgba(11, 145, 223, 0.938);
+      }
+      .fa-facebook:hover{
+        color: rgb(65, 116, 225);
+      }
+      .cart  header {
+height:100px;
+
+text-align:right;
+padding-top:20px;
+}
+
+.header-cart {
+position:relative;
+display:inline-block;
+
+cursor: pointer;
+}
+
+.header-cart img {
+width: 20px;
+}
+
+.header-cart span {
+    background-color: rgba(4, 220, 220, 0.781);
+    color: #fff;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 2px;
+    border-radius: 100%;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+   border-radius: 50px;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(63, 187, 236, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkcyan;
+  border-radius: 20px;
+}
+.btn:hover{
+  background-color: transparent;
+}
+</style>
+<body>
+    <section id="header">
+      <header id="header"></header>
+
+      <nav class="navbar navbar-expand-lg navbar-light" id="sticky" style=" background-color:#167B82 ;   height: 73px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="images/Perfume Fetchers.png" width="70" alt="logoimage" class="img-fluid"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
+            <header id="nav">
+              <nav>
+                <a href="index.html">Home</a>
+                <a href="index1.html">About</a>
+                <a href="index4.html">Collections</a>
+                <a href="index2.html">Contact</a>
+                <div class="animation start-home"></div>
+                
+        </nav>
+    
+            </header>
+            <form class="d-flex">
+              <div class="cart">
+                <header>
+            <button class="btn btn-outline-light" style="  color:#073243;  border: 1px darkcyan;margin-right: -25px;background-color: transparent;" type="submit">      <a href="index3.html">Log-in <i class="fa fa-user"></i></a></button>
+                  <div class="header-cart">
+                   <button class="btn btn-outline-light" style="  color:#073243;  border: 1px darkcyan;background-color: transparent;" type="submit"> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png">Cart</a></button>
+                    <span>0</span>
+                  </div>
+            </header>      
+          </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </section>
+  <br><br><br><br>
+  <section id="banner-image" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-taobao-perfume-promotes-fresh-blue-banner-image_175994.jpg');background-repeat: no-repeat;background-size: cover;padding-top: 60px;padding-bottom: 60px;">
+    <div class="container">
+      <br><br>
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-md-12 ">
+          <h2>New Collection  <br> for you </h2>
+          <p>Shop the latest products right <br> We have beard supplies from top brands. </p>
+        <button class="btn" >Shop now</button>
+
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </section>
+<br>
+   <section id="icon-box" style="background-color: darkcyan;padding-top: 30px; padding-bottom: 30px;">
+    <div class="container">
+      <div class="row" class="main">
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <img src="images/rocket.png" style="max-width:20%;" alt="rocket">
+           <h5>EU FREE DELIVARY</h5>
+          <p>Free Delivery on all order from EU <br> with price more than $90.00</p>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <img src="images/arrow.png" style="max-width:20%;" alt="arrow">
+          <h5 >MONAY GUARANTEE</h5>
+          <p>30 Days money back guarantee <br> no question asked!</p>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <img src="file:///E:/Aptech%20working/Vision%20project%20perfum/images/lock.png.crdownload" style="max-width: 20%;" alt="lock">
+          <h5>ONLINE SUPPORT 24/7</h5>
+          <p>We’re here to support to you. <br>Let’s shopping now!</p>
+        </div>
+      </div>
+    </div>
+    </section>
+    <br><br>
+  <section id="team">
+    <div class="container">
+      <h2  style="color: darkblue; text-decoration:underline;text-shadow: 3px 3px 5px darkcyan;" class="text-center">Our Team Members</h2>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <div class="profile-card">
+            <div class="img">
+              <img src="images/member1.jpg" height="100%" class="" alt="member1">
+            </div>
+            <div class="caption">
+              <h4>Ghulam Nabi</h4>
+              <p>Front End Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <div class="profile-card">
+            <div class="img">
+              <img src="images/member2.jpg" height="100%" class="" alt="member1">
+            </div>
+            <div class="caption">
+              <h4>Sawera Chohan</h4>
+              <p>Front End Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4 col-12">
+          <div class="profile-card">
+            <div class="img">
+              <img src="images/member3.jpg" height="100%" class="" alt="member1">
+            </div>
+            <div class="caption">
+              <h4>Ebad Ali</h4>
+              <p>Front End Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br>
+  <section id="footer" style="padding-top: 20px; padding-bottom: 20px;" class="bg bg-light">
+    <footer id="footer-start">
+    <div class="container-wrapper "  style="margin-top: 30px; margin-bottom: 0;">
+      <div class="row" style="text-align: center;">
+        <div class="col-sm-4 col-lg-4 col-md-4 col-12">
+         <h5>QUICK MENU</h5>
+         <ul>
+          <li>New Arrival</li>
+          <li>life Style</li>
+          <li>Accents</li>
+          <li>Collections</li>
+         </ul>
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4 col-12">
+         <h5>NEWSLETTER</h5>
+       <p >
+        Give us your email and you will be daily updated 
+        <br> with the latest events in detail!
+       </p>
+       <input type="email" class="form-control" id="email" placeholder="Your email letter">
+       <br>
+    <button style="margin-left: 30px;" class="btn col-md-4 col-lg-8 col-sm-12" type="button">Login</button>
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4 col-12">
+         <h5>INFORMATION</h5>
+         <ul>
+          <li>FAQs</li>
+          <li>Track Orders</li>
+          <li>Delivery</li>
+          <li>Contact Us</li>
+         </ul>
+        </div>
+      </div>
+      </footer>
+      <br>
+      <div class="row" >
+        <div class="col-sm-12 col-md-12 col-lg-12 col-12">
+          <span class="mx-2"><a href="#"><i class="fa fa-twitter"></i></a></span>
+          <span class="mx-2"><a href="#"><i class="fa fa-instagram"></i></a></span>
+          <span class="mx-2"><a href="#"><i class="fa fa-facebook"></i></a></span>
+        </div>
+      </div>
+        <br>
+       <p class="text-center">copyright @ 2022 <b style="color: darkcyan;">PERFUME STORE</b>. All rights reserved </p>
+      </div>
+    </div>
+</section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    const nav = document.querySelector('#sticky');
+let navTop = sticky.offsetTop;
+
+function fixedNav() {
+if (window.scrollY >= navTop) {    
+nav.classList.add('fixed');
+} else {
+nav.classList.remove('fixed');    
+}
+}
+
+window.addEventListener('scroll', fixedNav);
+  </script>
+</body>
+</html>
